@@ -20,7 +20,7 @@ def predict():
         year = int(request.form['year'])
 
         prediction = model.predict([[
-            year,month,day
+            year,month,date
         ]])
 
         return render_template("prediction.html", prediction_text="Predicted price {}".format(prediction))
