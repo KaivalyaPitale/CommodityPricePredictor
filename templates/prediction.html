@@ -16,8 +16,8 @@
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
       
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Student Marks Predictor</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Please fill required data to predict Grades</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Commodity Price Predictor</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Please fill in the date to predict price</p>
       <br><br><h2><b>{{prediction_text}}</b></h2>
     </div>
     <div>
@@ -26,159 +26,16 @@
     <a class="btn btn-primary" href="./" role="button">Back</a>
 <form action='/predict' method='POST'>
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> First Exam Grade </label>
-    <input type="text" class="form-control" id="G1" name="G1" placeholder="Grade (0-20)">
+    <label for="exampleFormControlInput1" class="form-label"> Date </label>
+    <input type="text" class="form-control" id="date" name="date" placeholder="date">
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Second Exam Grade </label>
-    <input type="text" class="form-control" id="G2" name="G2" placeholder="Grade (0-20)">
+    <label for="exampleFormControlInput1" class="form-label"> Month </label>
+    <input type="text" class="form-control" id="month" name="month" placeholder="month">
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Absences </label>
-    <input type="text" class="form-control" id="absences" name="absences" placeholder="absences (0-100)">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Age </label>
-    <input type="text" class="form-control" id="age" name="age" placeholder="age (15-22)">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Gender </label>
-    <select class="form-select" id="sex" name="sex" aria-label="Default select example">
-      <option selected>-- select gender --</option>
-      <option value="1">Male</option>
-      <option value="0">Female</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Address </label>
-    <select class="form-select" id="address" name="address" aria-label="Default select example">
-      <option selected>-- select your locality --</option>
-      <option value="1">Urban</option>
-      <option value="0">Rural</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Is your family size less than or equal to 3 ? </label>
-    <select class="form-select" id="famsize" name="famsize" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="1">Yes</option>
-      <option value="0">No</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Reason for choosing this College ? </label>
-    <select class="form-select" id="reason" name="reason" aria-label="Default select example">
-      <option selected>-- your reason --</option>
-      <option value="4">Reputation of the college</option>
-      <option value="3">Course Preference</option>
-      <option value="2">Close to my home</option>
-      <option value="1">Other Reason</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Are you extra educational support from school ? </label>
-    <select class="form-select" id="schoolsup" name="schoolsup" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="1">Yes</option>
-      <option value="0">No</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Have you joined the paid extra classes conducted by college? </label>
-    <select class="form-select" id="paid" name="paid" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="1">Yes</option>
-      <option value="0">No</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Have you been taking part in extra curricular activities recently ? </label>
-    <select class="form-select" id="activities" name="activities" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="1">Yes</option>
-      <option value="0">No</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Are you planning to opt for higher studies ? </label>
-    <select class="form-select" id="higher" name="higher" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="1">Yes</option>
-      <option value="0">No</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Are you having easy access to internet ? </label>
-    <select class="form-select" id="internet" name="internet" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="1">Yes</option>
-      <option value="0">No</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Mother's Education ? </label>
-    <select class="form-select" id="Medu" name="Medu" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="4">Higher Education</option>
-      <option value="3">Secondary Education</option>
-      <option value="2">5th to 9th grade</option>
-      <option value="1">Primary Education</option>
-      <option value="0">None</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Father's Education ? </label>
-    <select class="form-select" id="Fedu" name="Fedu" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="4">Higher Education</option>
-      <option value="3">Secondary Education</option>
-      <option value="2">5th to 9th grade</option>
-      <option value="1">Primary Education</option>
-      <option value="0">None</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> How much time you travel from home to school ? </label>
-    <select class="form-select" id="traveltime" name="traveltime" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="0"><15 min</option>
-      <option value="1">15 to 30 min</option>
-      <option value="2">30 min</option>
-      <option value="3">upto 1 hour</option>
-      <option value="4">>1hour</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> How much is your weekly studytime ? </label>
-    <select class="form-select" id="studytime" name="studytime" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="4">>10 hours</option>
-      <option value="3">5 to 10 hours</option>
-      <option value="2">2 to 5 hours</option>
-      <option value="1">< 2 hours</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Number of past class failures ? </label>
-    <select class="form-select" id="failures" name="failures" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="4">4</option>
-      <option value="3">3</option>
-      <option value="2">2</option>
-      <option value="1">1</option>
-      <option value="0">0</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> How would you rate your health ? </label>
-    <select class="form-select" id="health" name="health" aria-label="Default select example">
-      <option selected>-- your answer --</option>
-      <option value="4">Excellent</option>
-      <option value="3">Good</option>
-      <option value="2">Average</option>
-      <option value="1">Poor</option>
-      <option value="0">Critical</option>
-    </select>
+    <label for="exampleFormControlInput1" class="form-label"> Year </label>
+    <input type="text" class="form-control" id="year" name="year" placeholder="year">
   </div>
 
     <button type="submit" class="btn btn-primary">Predict</button>
