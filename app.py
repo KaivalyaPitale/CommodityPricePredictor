@@ -23,7 +23,7 @@ def predict():
             year,month,date
         ]])
 
-        return render_template("prediction.html", prediction_text="Predicted price {}".format(prediction))
+        return render_template("prediction.html", prediction_text="Predicted price: {}$".format(prediction[0]))
 
     else:
         return render_template("prediction.html")
